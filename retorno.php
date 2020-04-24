@@ -36,7 +36,7 @@
         print_r("Not paid yet. Do not release your item.");
     }
 
-    $logger  = 'ID: '.$_GET['id'].' - TOPIC: '.$_GET['topic'].' - FECHA: '.date("j F  Y - g:i a").PHP_EOL;
+    $logger  = 'ID: '.$_GET['id'].' - TOPIC: '.$_GET['topic'].' - FECHA: '.date("j F  Y - g:i a").' - PREFERENCE_ID: '.$merchant_order->preference_id.PHP_EOL;
     file_put_contents('./log_'.date("j.n.Y").'.log', $logger, FILE_APPEND);
 
 ?>
