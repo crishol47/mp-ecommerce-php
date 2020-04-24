@@ -16,6 +16,10 @@
             break;
     }
 
+    $logger  = 'ID: '.$_GET['id'].' - TOPIC: '.$_GET['topic'].' - FECHA: '.date("j F  Y - g:i a").' - PREFERENCE_ID: '.$merchant_order->preference_id.PHP_EOL;
+    file_put_contents('./log_'.date("j.n.Y").'.log', $logger, FILE_APPEND);
+
+
     $paid_amount = 0;
     foreach ($merchant_order->payments as $payment) {
         if ($payment->status == 'approved'){
@@ -36,8 +40,6 @@
         print_r("Not paid yet. Do not release your item.");
     }
 
-    $logger  = 'ID: '.$_GET['id'].' - TOPIC: '.$_GET['topic'].' - FECHA: '.date("j F  Y - g:i a").' - PREFERENCE_ID: '.$merchant_order->preference_id.PHP_EOL;
-    file_put_contents('./log_'.date("j.n.Y").'.log', $logger, FILE_APPEND);
 
 ?>
 
