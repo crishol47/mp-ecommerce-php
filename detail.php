@@ -142,7 +142,7 @@ ffff
                                     
                                    // Crea un objeto de preferencia
                                     $preference = new MercadoPago\Preference();
-                                    $preference->additional_info = "Cris";
+                                    //$preference->additional_info = "Cris";
                                     $url_actual = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
                                     //echo $url_actual;
 
